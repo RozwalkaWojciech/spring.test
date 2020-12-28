@@ -1,5 +1,6 @@
 package javer.spring.test.controller;
 
+import javer.spring.test.dto.Superhero;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,15 @@ public class MyFirstController {
             @RequestParam(name = "name", required = true) String name
     ) {
         return "hello from post " + name;
+    }
+
+    @PostMapping(
+            path = "/superhero",
+            produces = MediaType.TEXT_PLAIN_VALUE
+    )
+    @ResponseBody
+    public String getSuperhero(Superhero superhero) {
+        return superhero.toString();
     }
 
 }
