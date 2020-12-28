@@ -29,7 +29,7 @@ public class PlainController {
     }
 
     @PostMapping(
-            path = "/plain",
+            path = "/fullName",
             produces = MediaType.TEXT_PLAIN_VALUE
     )
     @ResponseBody
@@ -38,7 +38,7 @@ public class PlainController {
     }
 
     @PostMapping(
-            path = "/plain",
+            path = "/fullName2",
             produces = MediaType.TEXT_PLAIN_VALUE
     )
     @ResponseBody
