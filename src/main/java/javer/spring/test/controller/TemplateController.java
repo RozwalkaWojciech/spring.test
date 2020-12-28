@@ -25,16 +25,16 @@ public class TemplateController {
         return "fullName";
     }
 
-    @PostMapping(path = "/superhero")
+    @PostMapping(path = "/getSuperhero")
     public String getSuperhero(Model model, Superhero superhero) {
         model.addAttribute(superhero.getName());
         model.addAttribute(superhero.getNickName());
         model.addAttribute(superhero.getUniverse());
-        return "superhero";
+        return "getSuperhero";
     }
 
-    @GetMapping(path = "/addSuperHero")
+    @GetMapping(path = "/addSuperhero")
     public String addSuperhero() {
-        return "superhero";
+        return "addSuperhero";
     }
 }
