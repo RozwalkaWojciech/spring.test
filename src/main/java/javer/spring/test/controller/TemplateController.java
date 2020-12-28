@@ -1,8 +1,10 @@
 package javer.spring.test.controller;
 
+import javer.spring.test.dto.Superhero;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -21,5 +23,18 @@ public class TemplateController {
         model.addAttribute("name", name);
         model.addAttribute("lastName", lastName);
         return "fullName";
+    }
+
+    @PostMapping(path = "/superhero")
+    public String getSuperhero(Model model, Superhero superhero) {
+        model.addAttribute(superhero.getName());
+        model.addAttribute(superhero.getNickName());
+        model.addAttribute(superhero.getUniverse());
+        return "superhero";
+    }
+
+    @GetMapping(path = "/addSuperHero")
+    public String addSuperhero() {
+        return "superhero";
     }
 }
