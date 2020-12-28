@@ -15,7 +15,7 @@ public class MyFirstController {
             produces = MediaType.TEXT_PLAIN_VALUE
     )
     @ResponseBody
-    public String helloSprong(
+    public String helloSpring(
             @RequestParam(name = "name", required = true) String name
     ) {
         return "hello " + name;
