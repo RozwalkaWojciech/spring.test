@@ -1,6 +1,7 @@
 package javer.spring.test.controller;
 
 import javer.spring.test.dto.Superhero;
+import javer.spring.test.exception.NotFoundException;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,7 +40,9 @@ public class MyFirstController {
     )
     @ResponseBody
     public String getSuperhero(Superhero superhero) {
+        if (superhero.getUniverse().equals("DC")) {
+            throw new NotFoundException();
+        }
         return superhero.toString();
     }
-
 }
