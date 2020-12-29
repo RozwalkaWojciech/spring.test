@@ -19,7 +19,7 @@ public class PlainController {
     }
 
     @GetMapping(
-            path = "plain/name",
+            path = "/plain/name",
             produces = MediaType.TEXT_PLAIN_VALUE
     )
     @ResponseBody
