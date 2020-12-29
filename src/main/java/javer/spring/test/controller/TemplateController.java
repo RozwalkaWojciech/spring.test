@@ -2,6 +2,8 @@ package javer.spring.test.controller;
 
 import javer.spring.test.component.Constants;
 import javer.spring.test.dto.Superhero;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,10 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@PropertySource(name = "values", value = "classpath:values.properties")
 public class TemplateController {
 
-    private final
-    Constants constants;
+    @Value("${index.site.name}")
+    private String siteName;
+
+    private final Constants constants;
 
     public TemplateController(Constants constants) {
         this.constants = constants;
@@ -21,6 +26,12 @@ public class TemplateController {
     @GetMapping(path = "/index")
     public String getIndex(Model model) {
         model.addAttribute("title", constants.getSiteName());
+        return "index";
+    }
+
+    @GetMapping(path = "/index2")
+    public String getIndex2(Model model) {
+        model.addAttribute("title", siteName);
         return "index";
     }
 
