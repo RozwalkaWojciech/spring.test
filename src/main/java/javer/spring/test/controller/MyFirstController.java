@@ -18,7 +18,7 @@ public class MyFirstController {
     )
     @ResponseBody
     public String helloSpring(
-            @RequestParam(name = "name", required = true) String name
+            @RequestParam(name = "name") String name
     ) {
         return "hello " + name;
     }

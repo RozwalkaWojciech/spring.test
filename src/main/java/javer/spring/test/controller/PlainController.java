@@ -1,12 +1,10 @@
 package javer.spring.test.controller;
 
+import javer.spring.test.dto.Superhero;
 import javer.spring.test.util.RequestCounter;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class PlainController {
